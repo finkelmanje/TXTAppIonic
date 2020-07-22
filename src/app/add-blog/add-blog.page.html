@@ -1,0 +1,60 @@
+<ion-header>
+  <ion-toolbar transparent>
+   <ion-title>Add Blog</ion-title>
+   <ion-buttons end>
+     <button ion-button icon-only (click)="close()"><ion-icon name="close"></ion-icon></button>
+   </ion-buttons>
+  </ion-toolbar>
+ </ion-header>
+ 
+ <ion-content>
+ 
+   <ion-list no-lines>
+ 
+     <ion-item>
+       <ion-label floating>Title</ion-label>
+       <ion-input [(ngModel)]="title" type="text"></ion-input>
+     </ion-item>
+ 
+     <ion-item>
+       <ion-label floating>Content</ion-label>
+       <ion-textarea [(ngModel)]="content"></ion-textarea>
+     </ion-item>
+ 
+   </ion-list>
+   <ion-button (click)="getCurrentCoordinates()" expand="block">
+    Get Location
+  </ion-button>
+
+  <ion-button (click)="getAddress(latitude, longitude)" expand="block">
+    Get Address
+  </ion-button>
+  <ion-item>
+    <ion-label>
+      Address
+    </ion-label>
+    <ion-badge color="danger" slot="end">{{address}}</ion-badge>
+  </ion-item>
+  
+
+<ion-list>
+  <ion-list-header>
+    <ion-label>Location Coordinates</ion-label>
+  </ion-list-header>
+  <ion-item>
+    <ion-label>
+      Latitue
+    </ion-label>
+    <ion-badge color="danger" slot="end">{{latitude}}</ion-badge>
+  </ion-item>
+  <ion-item>
+    <ion-label>
+      Longitude
+    </ion-label>
+    <ion-badge color="danger" slot="end">{{longitude}}</ion-badge>
+  </ion-item>
+  </ion-list>
+ 
+   <button ion-button full color="secondary" (click)="save()">Save</button>
+ 
+ </ion-content>
